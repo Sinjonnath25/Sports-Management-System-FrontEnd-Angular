@@ -1,0 +1,24 @@
+<mat-card>
+    <h1>Trainers Feedbacks</h1>
+    <div class="panel-body">
+    <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"  >
+        <thead class="table-primary">
+            <tr>
+                <th>Trainer Name</th>
+                <th>Player Name</th>
+                <th>Ratings</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr *ngFor="let f of feedbacks">
+                <td>{{f.trainerName}}</td>
+                <td>{{f.playerName}}</td>
+                <td>{{f.rating}}</td>
+                <td>{{f.comment}}</td>
+              </tr> 
+        </tbody><br>
+    </table>
+</div>
+</mat-card>

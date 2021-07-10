@@ -1,0 +1,104 @@
+<mat-card>
+    <h1>Add New Trainer</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <form (ngSubmit)=" formSubmit()">
+            <!-- title field  -->
+            <mat-form-field class="w100" appearance="fill">
+              <mat-label>User Name</mat-label>
+              <input
+                [(ngModel)]="user.username"
+                type="text"
+                name="username"
+                placeholder="Enter here"
+                matInput
+                required
+              />
+            </mat-form-field>
+  
+            <!-- description field  -->
+            <mat-form-field class="w100" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input
+                  [(ngModel)]="user.password"
+                  type="password"
+                  name="password"
+                  placeholder="Enter here"
+                  matInput
+                  required
+                />
+              </mat-form-field>
+  
+            <!-- //max marks -->
+            <mat-form-field class="w100" appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input
+                  [(ngModel)]="user.firstName"
+                  type="text"
+                  name="firstName"
+                  placeholder="Enter here"
+                  matInput
+                  required
+                />
+              </mat-form-field>
+
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input
+                  [(ngModel)]="user.lastName"
+                  type="text"
+                  name="lastName"
+                  placeholder="Enter here"
+                  matInput
+                  required
+                />
+              </mat-form-field>
+
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input
+                  [(ngModel)]="user.email"
+                  type="email"
+                  name="email"
+                  placeholder="Enter here"
+                  matInput
+                  required
+                />
+              </mat-form-field>
+
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Mobile No.</mat-label>
+                <input
+                  [(ngModel)]="user.phone"
+                  type="tel"
+                  name="number"
+                  placeholder="Enter here"
+                required
+                  matInput
+                  
+                />
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class="mt20 w100">
+                <mat-label>Choose Role</mat-label>
+                <mat-select [(ngModel)]="user.type" name="type" required>
+                  <mat-option value="Trainer">Trainer</mat-option>
+                </mat-select>
+              </mat-form-field>
+            
+            <div class="container text-center">
+              <button mat-raised-button color="accent" type="submit">Add</button>
+              <button class="ml10" mat-raised-button color="primary" type="reset">Clear
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+      
+   
+  </mat-card>
+  
+  <!-- {{ quizData | json }} -->
+  

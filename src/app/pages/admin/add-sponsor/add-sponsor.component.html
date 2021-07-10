@@ -1,0 +1,64 @@
+<mat-card>
+  <h1>Add New Sponsor</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 offset-md-2" >
+          <form (ngSubmit)="formSubmit()">
+            <!-- title field  -->
+            <mat-form-field class="w100" appearance="fill">
+              <mat-label>Enter Sponsor Name</mat-label>
+              <input
+                [(ngModel)]="sponsor.s_name"
+                type="text"
+                name="s_name"
+                placeholder="Enter here"
+                matInput
+                required
+              />
+            </mat-form-field>
+            <br>
+  
+            <!-- description field  -->
+  
+            
+  
+                <!-- //max marks -->
+                <mat-form-field class="w100" appearance="fill">
+                  <mat-label>Amount</mat-label>
+                  <input
+                    [(ngModel)]="sponsor.amount"
+                    type="text"
+                    name="amount"
+                    placeholder="Enter here"
+                    matInput
+                    required
+                  />
+                </mat-form-field>
+
+                <br>
+                <mat-form-field class="w100" appearance="fill">
+                  <mat-label>Enter Description </mat-label>
+                  <textarea
+                    [(ngModel)]="sponsor.description"
+                    type="text"
+                    name="description"
+                    placeholder="Enter here"
+                    matInput
+                    rows="5"
+                  ></textarea>
+                </mat-form-field>
+                <br>
+          
+            <div class="text-center w100">
+              <button mat-raised-button color="accent" type="submit">Add</button>
+              <button class="ml10" mat-raised-button color="primary" type="reset">Clear
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+  
+  <!-- {{ quizData | json }} -->
+  

@@ -1,0 +1,54 @@
+<mat-card>
+    <h1 class="text-center"> Add Trainer Feedback</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form (ngSubmit)="addFeedback()">
+                    <!-- title field  -->
+                    <mat-form-field class="w100" appearance="fill">
+                        <mat-label>Enter Your UserName</mat-label>
+                        <input [(ngModel)]="feedbackData.playerName" type="text" name="playerName"
+                            placeholder="Enter here" matInput required />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="mt20 w100">
+                        <mat-label>Select Trainer</mat-label>
+                        <mat-select name="sponsor" [(ngModel)]="feedbackData.trainerName" required>
+                            <mat-option *ngFor="let t of trainers" [value]="t.firstName+' '+t.lastName">
+                                {{ t.firstName+" "+t.lastName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="mt20 w100">
+                        <mat-label>Choose Rating</mat-label>
+                        <mat-select [(ngModel)]="feedbackData.rating" name="rating" required>
+                            <mat-option value="Intermediate">Intermediate</mat-option>
+                            <mat-option value="Satisfactory">Satisfactory</mat-option>
+                            <mat-option value="Good">Good</mat-option>
+                            <mat-option value="Very Good">Very Good</mat-option>
+                            <mat-option value="Excellent">Excellent</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="w100" appearance="fill">
+                        <mat-label>Any Comment</mat-label>
+                        <textarea
+                          [(ngModel)]="feedbackData.comment"
+                          type="text"
+                          name="description"
+                          placeholder="Enter here"
+                          matInput
+                          rows="5"
+                        ></textarea>
+                      </mat-form-field>
+
+
+                    <div class="container text-center">
+                        <button mat-raised-button color="accent" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</mat-card>

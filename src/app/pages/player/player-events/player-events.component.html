@@ -1,0 +1,44 @@
+<b><h1  class="text-center">Upcoming Events</h1></b>
+<mat-card class="mt10 mr20 ml20" *ngFor="let e of events">
+    <mat-card-header>
+        <mat-icon>calendar_today</mat-icon>
+      <mat-card-title>
+        {{ e.title }}
+      </mat-card-title>
+      <mat-card-subtitle>
+      Sponsor : {{ e.sponsor.s_name }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ e.description }}</p>
+    </mat-card-content>
+    <mat-card-action>
+      <button
+      mat-stroked-button
+        color="accent"
+      >
+        Date : {{ e.date }}
+      </button>
+      <button mat-stroked-button color="accent" class="ml20">
+        Location : {{e.location}}
+      </button>
+  <!--=   <button
+        [routerLink]="'/admin/events/'+e.eId"
+        mat-flat-button
+        color="accent"
+        class="ml20"
+      >
+        Update
+      </button>
+      <button
+        mat-flat-button
+        color="warn"
+        class="ml10"
+        (click)="deleteEvent(e.eId)"
+      >
+        Delete
+      </button>
+      --> 
+    </mat-card-action>
+  </mat-card>
+  

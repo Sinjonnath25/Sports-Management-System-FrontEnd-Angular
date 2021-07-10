@@ -1,0 +1,33 @@
+<mat-card>
+    <h1>All Trainers</h1>
+    <div class="panel-body">
+    <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"  >
+        <thead class="thead-light">
+            <tr>
+                <th>UserName</th>
+                <th>Trainer First Name</th>
+                <th>Trainer Last Name</th>
+                <th>Trainer Email</th>
+                <th>Mobile No.</th>
+                <th>Role</th>
+                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr *ngFor="let u of users ">
+                <td>{{u.username}}</td>
+                <td>{{u.firstName}}</td>
+                <td>{{u.lastName}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.phone}}</td>
+                <td>{{u.type}}</td>
+                <td><button (click)="deleteTrainer(u.id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>&nbsp;
+                  <!--<button (click)="updateStudent(student.student_id)" class='btn btn-info'
+                  data-toggle="modal" data-target="#myModal">Update</button>&nbsp;-->
+                </td>
+              </tr> 
+        </tbody><br>
+    </table>
+</div>
+</mat-card>

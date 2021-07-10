@@ -1,0 +1,25 @@
+<mat-card>
+    <h1>All Trainers You canContact</h1>
+    <div class="panel-body">
+    <table  class="table table-hover table-sm " datatable [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"  >
+        <thead class="thead-light">
+            <tr>
+                <th>Trainer Name</th>
+                <th>Trainer Email</th>
+                <th>Mobile No.</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr *ngFor="let u of users ">
+                <td>{{u.firstName+" "+u.lastName}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.phone}}</td>
+                <td><a href="mailto:{{u.email}}">Send email</a></td>
+              </tr> 
+        </tbody><br>
+    </table>
+</div>
+</mat-card>
+

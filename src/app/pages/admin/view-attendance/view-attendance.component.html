@@ -1,0 +1,22 @@
+<mat-card>
+    <h1>Player Attendances</h1>
+    <div class="panel-body">
+    <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"  >
+        <thead class="table-primary">
+            <tr>
+                <th>Player Name</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr *ngFor="let a of attendances">
+                <td>{{a.playerName}}</td>
+                <td>{{a.date}}</td>
+                <td>{{a.status}}</td>
+              </tr> 
+        </tbody><br>
+    </table>
+</div>
+</mat-card>

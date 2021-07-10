@@ -1,0 +1,24 @@
+<mat-card>
+    <h1>All Availabble Player</h1>
+    <div class="panel-body">
+    <table  class="table table-hover table-sm " datatable [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"  >
+        <thead class="thead-light">
+            <tr>
+                <th>Player Name</th>
+                <th>Player Email</th>
+                <th>Player No.</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr *ngFor="let u of users ">
+                <td>{{u.firstName+" "+u.lastName}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.phone}}</td>
+              </tr> 
+        </tbody><br>
+    </table>
+</div>
+</mat-card>
+
+

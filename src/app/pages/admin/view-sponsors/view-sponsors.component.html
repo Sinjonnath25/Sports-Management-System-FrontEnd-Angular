@@ -1,0 +1,18 @@
+<mat-card>
+    <h1>All Sponsors</h1>
+    <mat-list>
+      <mat-list-item *ngFor="let s of sponsors">
+        <mat-icon mat-list-icon>category</mat-icon>
+        <div mat-line>{{s.s_name}}</div>
+       Amount: Rs.{{s.amount}}
+        <div mat-line>{{s.description}}</div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-sponsors" mat-raised-button color="accent">
+          Add New Sponsor
+        </button>
+      </div>
+    </mat-card>
+   

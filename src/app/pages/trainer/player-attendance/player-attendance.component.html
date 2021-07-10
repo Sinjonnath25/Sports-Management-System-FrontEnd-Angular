@@ -1,0 +1,45 @@
+<mat-card>
+    <h1 class="text-center"> Add Player Attendance</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form (ngSubmit)="addAttendance()">
+                    <!-- title field  -->
+
+                    <mat-form-field appearance="fill" class="mt20 w100">
+                        <mat-label>Select Player</mat-label>
+                        <mat-select name="sponsor" [(ngModel)]="attendanceData.playerName" required>
+                            <mat-option *ngFor="let p of players" [value]="p.firstName+' '+p.lastName">
+                                {{ p.firstName+" "+p.lastName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="w100" appearance="fill">
+                        <mat-label>Select Date</mat-label>
+                        <input
+                          [(ngModel)]="attendanceData.date"
+                          type="date"
+                          name="date"
+                          placeholder="Pick a Date"
+                          matInput
+                        />
+                      </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="mt20 w100">
+                        <mat-label>Choose Status</mat-label>
+                        <mat-select [(ngModel)]="attendanceData.status" name="status" required>
+                            <mat-option value="Present">Present</mat-option>
+                            <mat-option value="Absent">Absent</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                    <div class="container text-center">
+                        <button mat-raised-button color="accent" type="submit">Submit Attendance</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</mat-card>
